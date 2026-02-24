@@ -1,0 +1,65 @@
+<p>crud works!</p>
+<div class="container">
+
+  <h1 class="title">Student Management System</h1>
+
+  <!-- FORM -->
+  <div class="card">
+
+    <h2>Add Student</h2>
+
+    <input type="text" placeholder="Enter Name"
+      [(ngModel)]="name">
+
+    <input type="text" placeholder="Enter Address"
+      [(ngModel)]="address">
+
+    <input type="number" placeholder="Enter Fee"
+      [(ngModel)]="fee">
+
+    <br>
+
+    <button (click)="saveRecords()">Save</button>
+    <button (click)="UpdateRecords()">Update</button>
+
+  </div>
+
+
+  <!-- TABLE -->
+  <div class="table-card">
+
+    <h2>Student List</h2>
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Fee</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let student of StudentArray">
+
+          <td>{{student.name}}</td>
+          <td>{{student.address}}</td>
+          <td>{{student.fee}}</td>
+
+          <td>
+            <button (click)="setUpdate(student)">Edit</button>
+            <button (click)="setDelete(student)">Delete</button>
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
